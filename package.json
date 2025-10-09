@@ -1,0 +1,45 @@
+{
+  "name": "nodejs-web-template",
+  "version": "0.0.1",
+  "description": "A nodejs web project",
+  "keywords": [
+    "web",
+    "template"
+  ],
+  "homepage": "https://github.com/CorySanin/nodejs-web-template#readme",
+  "bugs": {
+    "url": "https://github.com/CorySanin/nodejs-web-template/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CorySanin/nodejs-web-template.git"
+  },
+  "license": "MIT",
+  "author": "Cory Sanin",
+  "type": "module",
+  "main": "./distribution/index.js",
+  "files": [
+    "distribution",
+    "assets",
+    "views"
+  ],
+  "dependencies": {
+    "ejs": "3.1.10",
+    "express": "5.1.0",
+    "express-session": "1.18.2",
+    "json5": "2.2.3",
+    "ky": "1.11.0"
+  },
+  "devDependencies": {
+    "@sindresorhus/tsconfig": "8.0.1",
+    "@types/express": "^5.0.3",
+    "@types/express-session": "^1.18.2",
+    "@types/node": "^24.7.0",
+    "forking-build-shit": "1.0.4",
+    "typescript": "5.9.3"
+  },
+  "scripts": {
+    "build": "npx build-shit",
+    "watch": "npx build-shit --watch"
+  }
+}
