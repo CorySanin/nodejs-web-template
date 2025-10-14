@@ -19,6 +19,21 @@ RUN npx tsc && npm run-script build && \
 
 FROM base AS deploy
 
+ARG version=develop
+ARG githash=REVISION
+ARG created=CREATED
+
+LABEL org.opencontainers.image.title="nodejs-web-template"
+LABEL org.opencontainers.image.description="Template for my nodejs web projects"
+LABEL org.opencontainers.image.authors="Cory Sanin <corysanin@outlook.com>"
+LABEL org.opencontainers.image.url="https://git.sanin.dev/corysanin/nodejs-web-template"
+LABEL org.opencontainers.image.documentation="https://git.sanin.dev/corysanin/nodejs-web-template"
+LABEL org.opencontainers.image.source="https://git.sanin.dev/corysanin/nodejs-web-template"
+LABEL org.opencontainers.image.licenses="MIT"
+LABEL org.opencontainers.image.version="${version}"
+LABEL org.opencontainers.image.revision="${githash}"
+LABEL org.opencontainers.image.created="${created}"
+
 HEALTHCHECK  --timeout=3s \
   CMD curl --fail http://localhost:8080/healthcheck || exit 1
 

@@ -35,7 +35,7 @@ class Web {
         const sessionSecret = process.env['SESSIONSECRET'] || options.sessionSecret;
         const app: Express = this.app = express();
 
-        if(!sessionSecret) {
+        if (!sessionSecret) {
             console.error('sessionSecret is required.');
             throw new Error('sessionSecret is required.');
         }
