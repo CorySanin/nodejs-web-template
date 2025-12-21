@@ -6,7 +6,7 @@ import ky from 'ky';
 import bodyParser from 'body-parser';
 import type { Express } from 'express';
 
-interface WebConfig {
+export interface WebConfig {
     sessionSecret?: string;
     port?: number;
     secure?: boolean;
@@ -15,11 +15,11 @@ interface WebConfig {
 /**
  * I still hate typescript.
  */
-function notStupidParseInt(v: string | undefined): number {
+export function notStupidParseInt(v: string | undefined): number {
     return v === undefined ? NaN : parseInt(v);
 }
 
-class Web {
+export class Web {
     private _webserver: http.Server | null = null;
     private app: Express | null = null;
     private port: number;
@@ -88,7 +88,7 @@ class Web {
             res.send(await (await ky.get('https://sanin.dev')).text());
         });
 
-        this._webserver = this.app.listen(this.port, () => console.log(`archery is running on port ${this.port}`));
+        this._webserver = this.app.listen(this.port, () => console.log(`web server is running on port ${this.port}`));
     }
 
     close = () => {
@@ -99,5 +99,3 @@ class Web {
 }
 
 export default Web;
-export { Web, notStupidParseInt };
-export type { WebConfig };

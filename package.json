@@ -25,21 +25,22 @@
   ],
   "dependencies": {
     "ejs": "3.1.10",
-    "express": "5.1.0",
+    "express": "5.2.1",
     "express-session": "1.18.2",
     "json5": "2.2.3",
-    "ky": "1.11.0"
+    "ky": "1.14.1"
   },
   "devDependencies": {
-    "@sindresorhus/tsconfig": "8.0.1",
-    "@types/express": "^5.0.3",
+    "@sindresorhus/tsconfig": "8.1.0",
+    "@types/express": "^5.0.6",
     "@types/express-session": "^1.18.2",
-    "@types/node": "^24.7.0",
-    "forking-build-shit": "1.0.4",
+    "@types/node": "^25.0.3",
+    "forking-build-shit": "1.0.5",
     "typescript": "5.9.3"
   },
   "scripts": {
-    "build": "npx build-shit",
-    "watch": "npx build-shit --watch"
+    "build": "tsc && npx build-shit",
+    "watch": "npx build-shit --watch",
+    "start": "node distribution/index.js"
   }
 }

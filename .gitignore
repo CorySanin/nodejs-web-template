@@ -106,5 +106,6 @@ dist
 assets/css/
 assets/js/
 assets/webp/
-config/
+config/*
+!config/config.example.jsonc
 distribution/
