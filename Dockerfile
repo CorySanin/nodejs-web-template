@@ -6,9 +6,8 @@ WORKDIR /usr/src/app
 
 RUN apk add --no-cache libwebp libwebp-tools libavif-apps
 
-COPY package*.json ./
-
-RUN npm install
+RUN --mount=target=/usr/src/app/package.json,source=package.json --mount=target=/usr/src/app/package-lock.json,source=package-lock.json \
+    npm ci
 
 COPY . .
 
