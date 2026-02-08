@@ -13,8 +13,7 @@ COPY . .
 
 RUN npx tsc && npm run-script build && \
   npm ci --only=production && \
-  ln -sf /usr/share/fonts assets/ && \
-  chown -R node .
+  ln -sf /usr/share/fonts assets/
 
 FROM base AS deploy
 
@@ -42,7 +41,7 @@ WORKDIR /usr/src/app
 
 RUN apk add --no-cache curl
 
-COPY --from=build-env /usr/src/app /usr/src/app
+COPY --from=build-env --chown=appuser:appuser /usr/src/app /usr/src/app
 
 USER node
 
