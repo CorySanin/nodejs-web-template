@@ -23,8 +23,13 @@
     "assets",
     "views"
   ],
+  "scripts": {
+    "build": "tsc && npx build-shit",
+    "start": "node distribution/index.js",
+    "watch": "npx build-shit --watch"
+  },
   "dependencies": {
-    "ejs": "4.0.1",
+    "ejs": "5.0.1",
     "express": "5.2.1",
     "express-session": "1.19.0",
     "json5": "2.2.3",
@@ -34,13 +39,8 @@
     "@sindresorhus/tsconfig": "8.1.0",
     "@types/express": "^5.0.6",
     "@types/express-session": "^1.18.2",
-    "@types/node": "^25.2.1",
+    "@types/node": "^25.5.0",
     "forking-build-shit": "1.0.5",
     "typescript": "5.9.3"
-  },
-  "scripts": {
-    "build": "tsc && npx build-shit",
-    "watch": "npx build-shit --watch",
-    "start": "node distribution/index.js"
   }
 }
